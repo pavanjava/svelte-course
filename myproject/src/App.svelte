@@ -1,10 +1,16 @@
 <script>
 	export let name;
+	export let channel;
+
+	const changeTitle = () => {
+		name = 'JavaScript Ninja';
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>{channel} masters Angular, React & Svelte</p>
+	<button on:click={changeTitle}>Click to Change the Title</button>
 </main>
 
 <style>
