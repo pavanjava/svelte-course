@@ -16,6 +16,7 @@
             <td>Id</td>
             <td>Name</td>
             <td>Score</td>
+            <td>Comment</td>
         </tr>
         </thead>
         {#each languages as language (language.id)}
@@ -23,6 +24,13 @@
                 <td>{language.id}</td>
                 <td>{language.name}</td>
                 <td>{language.score}</td>
+                <td>
+                    {#if language.score > 3}
+                        Good Score
+                    {:else}
+                        Low Score
+                    {/if}
+                </td>
                 <td>
                     <button on:click={() => {removeLanguage(language.id)}}>Delete</button>
                 </td>

@@ -1,2 +1,2 @@
 # svelte-course
-a branch demonstrates svelte concepts of inline event handlers
+a branch demonstrates svelte concepts of Conditionals and Conditional templating
