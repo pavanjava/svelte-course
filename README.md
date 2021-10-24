@@ -1,2 +1,2 @@
 # svelte-course
-a repository to demonstrate svelte concepts
+This branch would explain you about the svelte reactive variables and reactive blocks
