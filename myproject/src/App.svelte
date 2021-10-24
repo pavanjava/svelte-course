@@ -1,6 +1,11 @@
 <script>
     export let name;
     export let languages;
+
+    // handle the button click to remove the language
+    const removeLanguage = (id) => {
+        languages = languages.filter((language) => language.id !== id);
+    }
 </script>
 
 <main>
@@ -18,6 +23,9 @@
                 <td>{language.id}</td>
                 <td>{language.name}</td>
                 <td>{language.score}</td>
+                <td>
+                    <button on:click={() => {removeLanguage(language.id)}}>Delete</button>
+                </td>
             </tr>
             <!-- else is displayed only when the languages array is empty, please comment the array and check if this works-->
         {:else}

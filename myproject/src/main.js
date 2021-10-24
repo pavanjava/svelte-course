@@ -3,7 +3,7 @@ import App from './App.svelte';
 const app = new App({
 	target: document.body,
 	props: {
-		name: 'Pavan',
+		name: 'Svelte Inline Handlers',
 		channel: 'JavaScript Ninja',
 		languages: [
 			{name: 'Javascript', score: '3.5/5', id:1},
