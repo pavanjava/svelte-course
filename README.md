@@ -1,2 +1,2 @@
 # svelte-course
-a branch demonstrates svelte concepts of components and nesting of components
+This branch demonstrates svelte concepts of CSS & Conditional CSS
