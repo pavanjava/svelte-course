@@ -1,24 +1,29 @@
 <script>
     export let name;
-    export let channel;
-
-    const handleClick = () => {
-        name = 'JavaScript Ninja';
-    }
-
-    const handleInput = (event) => {
-        name = event.target.value;
-    }
+    export let languages;
 </script>
 
 <main>
     <h1>Hello {name}!</h1>
-    <p>{channel} masters Angular, React & Svelte</p>
-    <button on:click={handleClick}>Click to Change the Title</button>
-	<!-- below are two methods for 2-way data binding in svelte, we can use any of the two ways but the second is more recommended approach  -->
-    <!--<input type="text" on:input={handleInput} value={name}>-->
-	<input type="text" bind:value={name}>
-
+    <table>
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Score</td>
+        </tr>
+        </thead>
+        {#each languages as language (language.id)}
+            <tr>
+                <td>{language.id}</td>
+                <td>{language.name}</td>
+                <td>{language.score}</td>
+            </tr>
+            <!-- else is displayed only when the languages array is empty, please comment the array and check if this works-->
+        {:else}
+            <p>No Data to display....</p>
+        {/each}
+    </table>
 </main>
 
 <style>
