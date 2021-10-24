@@ -1,7 +1,10 @@
 <script>
     // variable to govern the modal to be shown or not
     // assign it to false inorder to hide the modal
-    let showModal = true;
+    export let showModal = true;
+
+    // this message gets overwritten if the prop is passed explicitly.
+    export let message = 'default modal message here';
 
     // conditional css, make it to true and see the trick
     let isNinja = false;
@@ -14,7 +17,7 @@
 {#if showModal}
     <div class="backdrop" class:ninja={isNinja}>
         <div class="modal">
-            <p>Sign up for the Ninja course</p>
+            <p>{message}</p>
             <button on:click={handleModalClose}>OK</button>
         </div>
     </div>

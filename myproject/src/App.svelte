@@ -10,7 +10,8 @@
     }
 </script>
 
-<Modal/>
+<!-- passing the data as props to modal component, making it more reusable, don't pass the message prop and see the trick-->
+<Modal message="do you want to delete row ?"/>
 
 <main>
     <h1>Hello {name}!</h1>
