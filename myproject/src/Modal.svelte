@@ -1,7 +1,7 @@
 <script>
     // variable to govern the modal to be shown or not
     // assign it to false inorder to hide the modal
-    export let showModal = true;
+    export let showModal = false;
 
     // this message gets overwritten if the prop is passed explicitly.
     export let message = 'default modal message here';
@@ -18,7 +18,8 @@
     <div class="backdrop" class:ninja={isNinja}>
         <div class="modal">
             <p>{message}</p>
-            <button on:click={handleModalClose}>OK</button>
+            <!-- 'on:click' is called the eventForward to the parent component where the component is being called -->
+            <button on:click>OK</button>
         </div>
     </div>
 {/if}

@@ -4,14 +4,21 @@
     export let name;
     export let languages;
 
+    let showModal = false;
+
     // handle the button click to remove the language
     const removeLanguage = (id) => {
+        showModal = !showModal;
         languages = languages.filter((language) => language.id !== id);
+    }
+
+    const handleModalClose = () => {
+        showModal = !showModal;
     }
 </script>
 
 <!-- passing the data as props to modal component, making it more reusable, don't pass the message prop and see the trick-->
-<Modal message="do you want to delete row ?"/>
+<Modal message="do you want to delete row ?" {showModal} on:click={handleModalClose}/>
 
 <main>
     <h1>Hello {name}!</h1>
