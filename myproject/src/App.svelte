@@ -1,6 +1,19 @@
 <script>
     export let name;
     export let channel;
+    let firstName;
+    let lastName;
+
+    // reactive variable
+    $: fullName = `${firstName} ${lastName}`;
+
+    //reactive block
+    $: {
+        console.log(firstName);
+        console.log(lastName);
+        console.log(fullName);
+        console.log(name);
+    }
 
     const handleClick = () => {
         name = 'JavaScript Ninja';
@@ -11,14 +24,16 @@
     }
 </script>
 
+<!--
+This example demo the reactive values, reactive values are such values they depend on
+and updates any ony of the depending value changes
+-->
 <main>
     <h1>Hello {name}!</h1>
-    <p>{channel} masters Angular, React & Svelte</p>
-    <button on:click={handleClick}>Click to Change the Title</button>
-	<!-- below are two methods for 2-way data binding in svelte, we can use any of the two ways but the second is more recommended approach  -->
-    <!--<input type="text" on:input={handleInput} value={name}>-->
-	<input type="text" bind:value={name}>
-
+    <p>{fullName}-{channel} masters Angular, React & Svelte</p>
+    <input type="text" bind:value={name}>
+    <input type="text" bind:value={firstName}>
+    <input type="text" bind:value={lastName}>
 </main>
 
 <style>
