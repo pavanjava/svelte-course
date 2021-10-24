@@ -1,3 +1,12 @@
+<!--
+1. stopPropagation - stop the event bubbling or capturing any further
+2. capture - fires the handler during the capture phase not bubbling
+3. once - makes sure the event can only fire once (removes handler)
+4. preventDefault - prevent the default action (run e.preventDefault())
+5. self - only fires the event if the clicked element is the target
+
+-->
+
 <script>
     // variable to govern the modal to be shown or not
     // assign it to false inorder to hide the modal
@@ -15,7 +24,7 @@
 </script>
 
 {#if showModal}
-    <div class="backdrop" class:ninja={isNinja}>
+    <div class="backdrop" class:ninja={isNinja} on:click|self>
         <div class="modal">
             <p>{message}</p>
             <!-- 'on:click' is called the eventForward to the parent component where the component is being called -->
