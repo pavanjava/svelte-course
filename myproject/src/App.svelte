@@ -1,4 +1,6 @@
 <script>
+    import Modal from './Modal.svelte';
+
     export let name;
     export let languages;
 
@@ -7,6 +9,8 @@
         languages = languages.filter((language) => language.id !== id);
     }
 </script>
+
+<Modal/>
 
 <main>
     <h1>Hello {name}!</h1>
